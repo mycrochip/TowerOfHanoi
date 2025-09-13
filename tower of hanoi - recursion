@@ -1,0 +1,28 @@
+def toh_recursive(n: int, source: str, target: str, helper: str) -> None:
+    """
+    Solve Tower of Hanoi problem recursively.
+
+    Args:
+        n (int): Number of disks to move.
+        source (str): The rod where disks are initially placed.
+        target (str): The rod where disks must be moved.
+        helper (str): The auxiliary rod used for temporary storage.
+
+    The function prints each move step-by-step.
+    """
+    if n == 0:
+        return
+
+    # Step 1: Move top n-1 disks from source → helper
+    toh_recursive(n - 1, source, helper, target)
+
+    # Step 2: Move largest disk from source → target
+    print(f"Move disk {n} from {source} → {target}")
+
+    # Step 3: Move n-1 disks from helper → target
+    toh_recursive(n - 1, helper, target, source)
+
+
+if __name__ == "__main__":
+    # Example: solve Tower of Hanoi with 5 disks
+    toh_recursive(5, "A", "C", "B")
