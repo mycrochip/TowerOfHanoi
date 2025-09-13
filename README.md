@@ -41,5 +41,3 @@ Move disk 1 from B → A
 Move disk 2 from B → C
 Move disk 1 from A → C
 ```
-```bash
-python toh_recursive.py
